@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { My_link } from '../user_p';
 import Link from "next/link"
 
-const Unique_category= () => {
+const Unique_category= (numberkey: number) => {
   const router = useRouter()
   let par : string;
   const { product } = router.query;
@@ -19,8 +19,6 @@ const Unique_category= () => {
   const rndInt2 = Math.floor(Math.random() * 6) + 1;
   const image2 = result[rndInt2].image_link
   console.log( "the result is ", typeof(product))
-
-
   return (<>
      <My_link>
         <Link href="/">Home </Link>
@@ -122,7 +120,7 @@ const Unique_category= () => {
                     <span>234 <label htmlFor="">Products showed</label> </span>
                 </div>
             {result.length > 1 ? <div className="cart_show">
-            {result.map((data)=> <Card 
+            {result.map((data)=> <Card  key={Math.floor(Math.random()*999)}
              name={data.name}
              imageLink={"/"+data.image_link}
              rate={data.rate}
