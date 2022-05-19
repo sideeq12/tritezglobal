@@ -3,6 +3,7 @@
         import { database } from "../components/card/database";
         import { Card } from "../components/card/card";
 import { Search_Bar } from "../components/search/search";
+import Link from "next/link";
 
  const Search_Page = () =>{
     const [showFilter, setShowFilter ] = useState(true)
@@ -10,7 +11,7 @@ import { Search_Bar } from "../components/search/search";
 const products = [...product, ...product]
     return (
         <> 
-        <SPAN> <a href="/">Home  {">"} Clothes and Accesories </a> {">"} <label htmlFor="Clothes">Clothes</label></SPAN>
+        <SPAN> <Link href="/">Home  {">"} Clothes and Accesories </Link> {">"} <label htmlFor="Clothes">Clothes</label></SPAN>
         <Search_Bar />
         <Sieve>
             <select name="" id="">
@@ -90,10 +91,10 @@ const products = [...product, ...product]
                     <span className="left" onClick={()=> setShowFilter(!showFilter)}>
                         { showFilter ? <>Hide Filter
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-bar-right" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+  <path fillRule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
 </svg>
 </> : <> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-bar-right" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+  <path fillRule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
 </svg> show Filter  
 </>}
                     </span>
@@ -111,7 +112,7 @@ const products = [...product, ...product]
              items_left={data.items_left}
              />)}
             </div>
-            <a href="/" className="next">Next</a>
+            <Link href="/" className="next">Next</Link>
             </div>
         </Filter>
         </>
