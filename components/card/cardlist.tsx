@@ -2,7 +2,7 @@
 import { Card } from "./card"
 import { Card_List, Coverchain } from "./cardstyle"
 import { database } from "./database"
-
+import Link from "next/link"
 
 export const CardList = ()=>{
     const product = database.slice(0, 8)
@@ -24,6 +24,7 @@ export const CardList = ()=>{
             </div>
             <Card_List>
             {product.map((data)=> <Card 
+            key={Math.floor(Math.random()*3024)}
              name={data.name}
              imageLink={data.image_link}
              rate={data.rate}
@@ -35,7 +36,7 @@ export const CardList = ()=>{
              />)}
         </Card_List>
         <div className="next">
-            <a href="/products_list">View All</a>
+            <Link href="/products_list">View All</Link>
         </div>
         </Coverchain>
     )

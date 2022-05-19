@@ -8,6 +8,7 @@ export const Cartvl = ()=>{
     return(
         <View_list>
         {prodcts.map((pro)=> <Cart_view name={pro.name} 
+        key={Math.floor(Math.random()*2383)}
         image_link={pro.image_link}
         price={pro.price}
         />)}

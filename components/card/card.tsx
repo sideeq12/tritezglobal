@@ -1,4 +1,5 @@
 import {Card_Layout } from "./cardstyle"
+import Link from "next/link"
 
 interface details {
     imageLink : string, 
@@ -35,7 +36,7 @@ export const Card = ({imageLink, name, rate, rate_count, price, old_price, in_st
                             <label> {in_stock ? <>In stock</> : <>Sold out</>}</label> <br />
                             Only {items_left} items left
                         </div>
-                        <a href="/product_info">Add to cart</a>
+                        <Link href="/product_info">Add to cart</Link>
                     </div>
                 </div>
         </Card_Layout>
