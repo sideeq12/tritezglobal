@@ -11,7 +11,7 @@ export const SlidesShow = ()=>{
             Get to see our top selling Products of the months and latest Dresses. We are commmitted to deliver
             Swift and ccurate products to our customers.</p>
         <Slides>
-            {database.map((data)=><img src={data.image_link} />)}
+            {database.map((data)=><img key={Math.floor(Math.random()*999)} src={data.image_link} />)}
             {/* <img src='https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt='' />
 <img src='https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt=''/>
 <img src='https://images.unsplash.com/photo-1510771463146-e89e6e86560e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt='' />
