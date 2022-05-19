@@ -5,6 +5,7 @@ import { Sieve, Filter, Cate } from '../pr_list';
 import { Card } from '../../components/card/card';
 import { useState } from 'react';
 import { My_link } from '../user_p';
+import Link from "next/link"
 
 const Unique_category= () => {
   const router = useRouter()
@@ -19,17 +20,18 @@ const Unique_category= () => {
   const image2 = result[rndInt2].image_link
   console.log( "the result is ", typeof(product))
 
+
   return (<>
      <My_link>
-        <a href="/">Home </a>
+        <Link href="/">Home </Link>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
 </svg>
- <a href="/products_list">Clothes</a> 
+ <Link href="/products_list">Clothes</Link> 
  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
 </svg>
- <a href="#" className='mai'>{product}</a>
+ <Link href="#" className='mai'>{product}</Link>
     </My_link>
     <LargeCard image1={"/"+image1} image2={"/"+image2} name1={product} />
     <Sieve>
@@ -131,7 +133,7 @@ const Unique_category= () => {
              items_left={data.items_left}
              />)}
             </div> : <>No products Found</>}
-            <a href="/" className="next">Next</a>
+            <Link href="/" className="next">Next</Link>
             </div>
         </Filter>
   </>
