@@ -90,7 +90,7 @@ export const My_address = ()=>{
                         </div>
                         <div className="firstpays">
                             <label className="exp">
-                                <span>Expiry Date *</span> <br />
+                                <span>Expiry Date *</span> <br/>
                                 <input type="text" />
                             </label>
                             <label className="cvv">
