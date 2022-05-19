@@ -102,6 +102,7 @@ const products = [...product, ...product]
                 </div>
             <div className="cart_show">
             {products.map((data)=> <Card 
+            key={Math.floor(Math.random()*3899)}
              name={data.name}
              imageLink={data.image_link}
              rate={data.rate}
