@@ -164,6 +164,9 @@ export const Product_style = styled.div`
                     border-radius: 10px;
                     color : white;
                     background-color:#34ADDC;
+                    label{
+                        color : white;
+                    }
                 }
                 button:hover{
                     cursor: pointer;
