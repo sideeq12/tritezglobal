@@ -5,7 +5,8 @@ export const Welc = styled.div`
     border: 10px;
     width : 90vw;
     margin: 20px auto;
-    height: 100vh;
+    height: fit-content;
+    padding : 0px 0px 30px 0px;
     display: flex;
     justify-content: center;
     align-items: center;

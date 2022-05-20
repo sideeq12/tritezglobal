@@ -25,6 +25,7 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     .burger{
             display: block;
             margin-left: 5vw;
+            z-index: 4;
 
             svg{
                 color : #34ADDC;
@@ -37,7 +38,7 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 export const Logo = styled.img`
     height: 30px;
     @media (max-width: 720px) {
-        margin : 0px 15% 0px 25%;
+        margin : 0px 12% 0px 25%;
     }
 `
 export const List = styled.div<props>`
@@ -66,7 +67,7 @@ export const List = styled.div<props>`
     }
     }
     @media (max-width : 720px) {
-        position: absolute;
+        position: fixed;
         height: 90vh;
         width: 100vw;
         margin-left:  ${props => props.close ? "-100%" : "0px"};
@@ -76,7 +77,7 @@ export const List = styled.div<props>`
         color : white;
         background-color: #34ADDC;
         backdrop-filter: blur(5px);
-        top: 65px;
+        top : 0px;
         z-index: 3;
         gap : 1rem;
         
