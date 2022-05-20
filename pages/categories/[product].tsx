@@ -20,7 +20,7 @@ const Unique_category= (numberkey: number) => {
   const image2 = result[rndInt2].image_link
   console.log( "the result is ", typeof(product))
   return (<div>
-hu 
+      testin 
   </div>
   )
 }
