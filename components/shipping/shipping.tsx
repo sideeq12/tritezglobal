@@ -62,7 +62,7 @@ export const Shipping = ()=>{
         Delivered
     </Cha>
     </Menu_change>
-<Shipping_style>
+<Shipping_style> 
             <Shiptitle className="shiptitle" check={true}>
                 <label className="id">id</label>
                 <label className="order">Order</label>

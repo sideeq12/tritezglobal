@@ -93,6 +93,11 @@ export const Cha = styled.div<bor>`
     &:hover{
         cursor: pointer;
     }
+    @media (max-width: 720px) {
+        font-size: small;
+        padding : 5px;
+        margin-right: 10px;
+    }
 `
 
 export const My_link = styled.div`
