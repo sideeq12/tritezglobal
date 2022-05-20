@@ -1,11 +1,11 @@
 import { Product_Cartes } from "../components/product_detail/product"
 import { Rate_section } from "../components/rating/rates";
-import { Similar } from "./info";
+import { Similar } from "../styles/info";
 import { Card_List } from "../components/card/cardstyle";
 import {Card } from "../components/card/card"
 import Link from "next/link";
 import { database } from "../components/card/database";
-import { My_link } from "./user_p";
+import { My_link } from "../styles/user_p";
 
 const product = database.slice(0,6)
 

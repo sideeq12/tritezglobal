@@ -1,4 +1,4 @@
-        import { Sieve, Filter, Cate , SPAN} from "./pr_list";
+        import { Sieve, Filter, Cate , SPAN} from "../styles/pr_list";
         import { useState } from "react";
         import { database } from "../components/card/database";
         import { Card } from "../components/card/card";

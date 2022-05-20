@@ -1,5 +1,5 @@
 import { Cart_list } from "../components/cartlist/cartlist";
-import { My_link } from "./user_p";
+import { My_link } from "../styles/user_p";
 import Link from "next/link";
 
 const User_cart = ()=>{

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { List_Cart } from "../components/card_category/list_cat";
-import { Filter, SPAN } from "./pr_list";
+import { Filter, SPAN } from "../styles/pr_list";
 import { database } from "../components/card/database";
 import { Card } from "../components/card/card";
 import { Fil_cat } from "../components/filter/by_categor/by_category";
-import { Cate } from "./pr_list";
+import { Cate } from "../styles/pr_list";
 import Link from "next/link";
-import { Sieve } from "./pr_list";
+import { Sieve } from "../styles/pr_list";
 
 const product = database
 const products = [...product, ...product]

@@ -1,6 +1,6 @@
 import {My_address } from "../components/address _billing/address"
 import { Cartvl } from "../components/cart_view/cart_vl";
-import { Pay_cov, My_link } from "./user_p";
+import { Pay_cov, My_link } from "../styles/user_p";
 import Link from "next/link";
 
 const Payment_page = ()=>{

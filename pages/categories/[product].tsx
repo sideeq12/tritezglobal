@@ -1,10 +1,10 @@
 import { database } from '../../components/card/database';
 import { useRouter } from 'next/router'
 import { LargeCard } from '../../components/larCard/largecard';
-import { Sieve, Filter, Cate } from '../pr_list';
+import { Sieve, Filter, Cate } from '../../styles/pr_list';
 import { Card } from '../../components/card/card';
 import { useState } from 'react';
-import { My_link } from '../user_p';
+import { My_link } from '../../styles/user_p';
 import Link from "next/link"
 
 const Unique_category= (numberkey: number) => {
