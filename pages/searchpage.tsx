@@ -11,7 +11,7 @@ import Link from "next/link";
 const products = [...product, ...product]
     return (
         <> 
-        <SPAN> <Link href="/">Home  {">"} Clothes and Accesories </Link> {">"} <label htmlFor="Clothes">Clothes</label></SPAN>
+        <SPAN> <Link href="/categories">Clothes and Accesories </Link> {">"} <label htmlFor="Clothes">Clothes</label></SPAN>
         <Search_Bar />
         <Sieve>
             <select name="" id="">

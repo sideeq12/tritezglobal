@@ -7,9 +7,13 @@ export const Right = styled.div`
     align-items: center;
     height : fit-content;
     justify-content: space-around;
-    .search, .cart{
-        height: 32px;
-        width : 32px;
+    .search,.cart{
+        border-radius: 100%;
+        padding : 10px; 
+    }
+    .search svg, .cart svg{
+        height: 16px;
+        width : 16px;
         display: flex;
         justify-content: center;
         align-items: center;
