@@ -61,3 +61,7 @@ export const My_link = styled.div`
         color : #09668A;
     }
 `
+
+export const All = styled.div`
+    width : 100%;
+`
