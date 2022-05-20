@@ -164,7 +164,7 @@ z-index: 3;
 
 @media (max-width: 720px) {
     .closesign{
-        left : 86vw;
+        left : 92vw;
         top : 80px;
         svg{
             height: 20px;
@@ -238,8 +238,8 @@ form {
 }
 
 @media (max-width : 720px) {
-    width : 80vw;
-left : 10vw;
+    width : 90vw;
+left : 5vw;
 top : 70px;
 
     span label{
