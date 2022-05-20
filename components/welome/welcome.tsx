@@ -10,7 +10,7 @@ export const Welcome = () =>{
                 Fashion that reflects what your identity are!
             </h2>
             <p>Anyone can beat you but no one can beat your outfit as you wear tritez.</p>
-            <Link href="/products_list">Get started</Link>
+            <Link  className="stat" href="/products_list">Get started</Link>
             </div>
             <div className="right">
                 <img src="shop.png" className="welcome" alt="Tritez welcome page" />

@@ -121,8 +121,8 @@ export const Welc = styled.div`
                 font-size: 12px;
             }
             a{
-                font-size: smaller;
-                padding: 5px 20px;
+                font-size: small;
+                padding: 10px 25px;
                 border-radius: 10px;
             }
             h2{
