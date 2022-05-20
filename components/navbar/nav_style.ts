@@ -38,7 +38,7 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 export const Logo = styled.img`
     height: 30px;
     @media (max-width: 720px) {
-        margin : 0px 12% 0px 25%;
+        margin : 0px 10% 0px 25%;
     }
 `
 export const List = styled.div<props>`

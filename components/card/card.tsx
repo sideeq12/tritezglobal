@@ -24,7 +24,7 @@ export const Card = ({imageLink, name, rate, rate_count, price, old_price, in_st
                             {name}
                         </span>
                          <label>
-                            <img src="star.png" alt="tritez rate image count" />
+                            <img src="/star.png" alt="tritez rate image count" />
                             {rate} ({rate_count})
                          </label>
                     </div>

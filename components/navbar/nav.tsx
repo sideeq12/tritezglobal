@@ -7,7 +7,7 @@ import Link from "next/link"
 export const Navbar = ()=>{
 
     const [show, setShow] = useState(false)
-    const [close, setClose] = useState(false)
+    const [close, setClose] = useState(true)
     const [active, setActive] = useState(true)
     const [showSign, setShowSign ] = useState(false)
     const [showUser, setShowUser ] = useState(false)

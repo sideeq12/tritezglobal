@@ -36,6 +36,7 @@ export const Right = styled.div`
     }
     @media (max-width: 720px) {
         width: fit-content;
+        margin-right: 10px;
      .search, .cart{
          margin-right: 5px;
      }

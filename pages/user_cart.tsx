@@ -21,7 +21,7 @@ const User_cart = ()=>{
             <Link href="/products_list" style={{"padding" : "10px 30px", "border" : "1px solid black","fontSize" : "12px",
             "borderRadius" : "5px"
         }}>back to shopping</Link>
-            <Link href="/user_payment" className="pro" style={{"padding" : "10px 30px", "fontSize" : "12px", "borderRadius" : "5px", "color" : "white",
+            <Link style={{"color": "white", "padding" : "10px 15px", "backgroundColor" : "#34ADDC"}} href="/user_payment" className="pro" style={{"padding" : "10px 30px", "fontSize" : "12px", "borderRadius" : "5px", "color" : "white",
              "backgroundColor" : "#34ADDC"}}>Proceed to checkout</Link>
         </div>
         </>
