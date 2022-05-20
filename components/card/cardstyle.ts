@@ -81,7 +81,8 @@ export const Card_Layout = styled.div<details>`
         @media (max-width: 720px) {
             width: 150px;
             height: 250px;
-            .description{=
+            .description{
+                margin-top: 10px;
                 padding : 3px 2px;
                 .first{
                     font-size: xx-small;
