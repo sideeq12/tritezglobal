@@ -82,6 +82,8 @@ export const Welc = styled.div`
             width: 200px;
             height: 200px;
             border-radius: 100%;
+            animation: blink infinite  6s;
+
         }
         .circle1{
             position: absolute;
@@ -136,6 +138,7 @@ export const Welc = styled.div`
             .circle{
             width: 120px;
             height: 120px;
+            animation: blink1 infinite  6s;
             border-radius: 100%;
         }
         .circle1{
@@ -171,5 +174,44 @@ export const Welc = styled.div`
         }
         }
 
+    }
+
+
+
+    @keyframes blink {
+        0%{
+            width : 120px;
+            height: 120px;
+        }25%{
+            width :160px;
+            height: 160px;
+        }50%{
+            height: 200px;
+            width: 200px;
+        }75%{
+            width: 160px;
+            height: 160px;
+        }100%{
+            width : 120px;
+            height: 120px;
+        }
+    }
+    @keyframes blink1 {
+        0%{
+            width : 40px;
+            height: 40px;
+        }25%{
+            width :80px;
+            height: 80px;
+        }50%{
+            height: 120px;
+            width: 120px;
+        }75%{
+            width: 80px;
+            height: 80px;
+        }100%{
+            width : 40px;
+            height: 40px;
+        }
     }
 `
