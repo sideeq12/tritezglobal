@@ -35,6 +35,9 @@ export const Right = styled.div`
         }
     }
     @media (max-width: 720px) {
-     margin-right : 5vw ;
+        width: fit-content;
+     .search, .cart{
+         margin-right: 5px;
+     }
     }
 `

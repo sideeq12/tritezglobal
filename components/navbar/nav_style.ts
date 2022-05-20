@@ -37,7 +37,7 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 export const Logo = styled.img`
     height: 30px;
     @media (max-width: 720px) {
-        margin : 0px 25%;
+        margin : 0px 15% 0px 25%;
     }
 `
 export const List = styled.div<props>`
@@ -67,23 +67,24 @@ export const List = styled.div<props>`
     }
     @media (max-width : 720px) {
         position: absolute;
-        height: 300px;
+        height: 90vh;
         width: 100vw;
         margin-left:  ${props => props.close ? "-100%" : "0px"};
         transition : .5s;
         flex-direction: column;
-        padding : 20px 10vw;
+        padding : 15vh 10vw;
         color : white;
         background-color: #34ADDC;
         backdrop-filter: blur(5px);
         top: 65px;
-        z-index: 1;
+        z-index: 3;
         gap : 1rem;
         
 
         div{ 
             width: 50%;
-            border-bottom: 1px solid white;
+            font-size: 20px;
+            margin-left: 20vw;
             a:hover{
             color : white;
             transform: scale(1.2);
