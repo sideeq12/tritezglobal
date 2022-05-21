@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   const [WelcomeMessage, setWelcomeMessage ] = useState(true)
   setTimeout(()=>{
     setWelcomeMessage(false)
-  }, 5000)
+  }, 4000)
   return (
     <>
     {WelcomeMessage ? <WelcomeMessages /> :<> <Welcome />
