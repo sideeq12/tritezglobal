@@ -1,5 +1,5 @@
 import { Cart_list } from "../components/cartlist/cartlist";
-import { My_link } from "../styles/user_p";
+import { My_link, Last } from "../styles/user_p";
 import Link from "next/link";
 
 const User_cart = ()=>{
@@ -16,14 +16,17 @@ const User_cart = ()=>{
 <Link href="#" className="mai">Shopping Cart</Link>  
 </My_link>
         <Cart_list />
+        <Last>
         <div className="proceed" style={{"margin" : "50px auto",  "width" : "80vw", "display" : "flex", 
-        "justifyContent" : "space-between", }}>
-            <Link href="/products_list" style={{"padding" : "10px 30px", "border" : "1px solid black","fontSize" : "12px",
-            "borderRadius" : "5px"
-        }}>back to shopping</Link>
-            <Link style={{"color": "white", "padding" : "10px 15px", "backgroundColor" : "#34ADDC"}} href="/user_payment" className="pro" style={{"padding" : "10px 30px", "fontSize" : "12px", "borderRadius" : "5px", "color" : "white",
-             "backgroundColor" : "#34ADDC"}}>Proceed to checkout</Link>
+        "justifyContent" : "space-between"}}>
+            <div className="pros">
+            <Link href="/products_list">back to shopping</Link>
+            </div>
+            <div className="pro">
+            <Link  href="/user_payment">Proceed to checkout</Link>
+            </div>
         </div>
+        </Last>
         </>
     )
 }

@@ -61,6 +61,24 @@ export const My_link = styled.div`
         color : #09668A;
     }
 `
+export const Last = styled.div`
+    /* display: none; */
+    .proceed{
+        margin : 50px auto;
+        font-size: small;
+        .pros, .pro{
+            padding : 10px 25px;
+            border-radius: 5px;
+            color : white;
+        }
+        .pros{
+            background-color: black;
+        }
+        .pro{
+            background-color: #34ADDC;
+        }
+    }
+`
 
 export const All = styled.div`
     width : 100%;
