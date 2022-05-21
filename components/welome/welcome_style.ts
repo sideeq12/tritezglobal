@@ -4,8 +4,8 @@ import styled from "styled-components";
 export const Welc = styled.div`
     border: 10px;
     width : 90vw;
-    margin: 20px auto;
-    height: fit-content;
+    margin: 0px auto;
+    height: 90vh;
     padding : 0px 0px 30px 0px;
     display: flex;
     justify-content: center;
@@ -22,15 +22,23 @@ export const Welc = styled.div`
             font-family: 'Tinos';
             font-size: 43px;
             word-spacing: 2px;
+            transform: translateY(-100px);
+            clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+            opacity: 0;
         }
         label{
             font-family: "Send Flowers";
             font-size: 30px;
             font-weight: 400;
             color : #09668A;
+            opacity: 0;
+            transform: translateY(100px);
+            clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
         }
         p{
             margin-bottom: 30px;
+            transform: translateY(100px);
+            clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
         }
         p, a{
             font-family: 'Montserrat';
@@ -54,6 +62,7 @@ export const Welc = styled.div`
         img.welcome{
             height: 100%;
             z-index: 1;
+            /* opacity: 0; */
             
         }
         .cust{
@@ -79,10 +88,10 @@ export const Welc = styled.div`
             }
         }
         .circle{
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 100%;
-            animation: blink infinite  6s;
+            /* animation: blink infinite  6s; */
 
         }
         .circle1{
@@ -97,7 +106,7 @@ export const Welc = styled.div`
             left: 200px;
             background-color: white;
         }
-        .circle3{
+        .circle3{ 
             position: absolute;
             right: 100px;
             top: 20px;
@@ -176,8 +185,6 @@ export const Welc = styled.div`
 
     }
 
-
-
     @keyframes blink {
         0%{
             width : 120px;
@@ -214,4 +221,8 @@ export const Welc = styled.div`
             height: 40px;
         }
     }
+`
+
+export const Ganimate = styled.div`
+
 `

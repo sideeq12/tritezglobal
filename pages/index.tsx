@@ -9,22 +9,17 @@ import { Mission } from '../components/mission/mission'
 import { SlidesShow } from '../components/slideshow/slideshow'
 import { Test } from '../components/test/test'
 import { Welcome } from '../components/welome/welcome'
-import { WelcomeMessages } from '../components/animate/animate'
 
 
 const Home: NextPage = () => {
-  const [WelcomeMessage, setWelcomeMessage ] = useState(true)
-  setTimeout(()=>{
-    setWelcomeMessage(false)
-  }, 4000)
+  
   return (
     <>
-    {WelcomeMessage ? <WelcomeMessages /> :<> <Welcome />
+     <Welcome />
     <Mission />
     <Delist />
     <CardList />
     <SlidesShow />
-    </> }
     </>
   )
 }

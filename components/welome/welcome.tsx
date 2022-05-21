@@ -1,11 +1,25 @@
-import { Welc } from "./welcome_style"
+import { Ganimate, Welc } from "./welcome_style"
 import Link from "next/link"
+import { gsap , Power4, CSSPlugin} from "gsap"
+import { useEffect } from "react"
 
 export const Welcome = () =>{
+    let t1 = gsap.timeline({delay : 0.3})
+
+    useEffect(()=>{
+        let tl = gsap.timeline({ default : { ease : Power4.easeInOut, duration : 2}});
+        // let flagPoles = gsap.cCSSPlugin.getRule(".welcome")
+
+        tl.to("h2, p, .lab", { "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)", 
+         opacity : 1,
+         y : 0,
+         duration : 1.5})
+    }, [])
     return(
-        <Welc>
+      <Ganimate>
+            <Welc>
             <div className="left">
-            <label htmlFor="tritez label">Trendy Collection</label>
+            <label htmlFor="tritez label" className="lab">Trendy Collection</label>
             <h2>
                 Fashion that reflects what your identity are!
             </h2>
@@ -26,5 +40,6 @@ export const Welcome = () =>{
                  <div className="circle circle3"></div>
             </div>
         </Welc>
+      </Ganimate>
     )
 }
