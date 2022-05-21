@@ -20,7 +20,7 @@ const User_cart = ()=>{
         <div className="proceed" style={{"margin" : "50px auto",  "width" : "80vw", "display" : "flex", 
         "justifyContent" : "space-between"}}>
             <div className="pros">
-            <Link href="/products_list">back to shopping</Link>
+            <Link href="/products_list">Back to shopping</Link>
             </div>
             <div className="pro">
             <Link  href="/user_payment">Proceed to checkout</Link>
