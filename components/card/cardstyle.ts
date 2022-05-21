@@ -10,6 +10,7 @@ export const Card_Layout = styled.div<details>`
         height:  300px;
         width : 260px;
         border : 1px solid rgba(0,0,0,0.1);
+        margin-top: 10px;
 
         .image{
                 height: 60%;
