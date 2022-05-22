@@ -1,9 +1,31 @@
 import { Delivery } from "./delivery"
 import { Delivery_list,Backg,Book, Message, Data, Form,Button } from "./deli_style"
-import { useState } from "react"
+import { useState , useEffect} from "react"
+import { gsap , Power3} from "gsap"
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
+
 
 export const Delist = () =>{
     const [showSign, setShowSign] = useState(false)
+
+    // gsap.registerPlugin(ScrollTrigger, Power3)
+    // useEffect(()=>{
+    //     let tl = gsap.timeline({
+    //         scrollTrigger : {
+    //             trigger : ".eachCard",
+    //             pin : true,
+    //             start : "30%",
+    //             end : "+=500",
+    //             scrub : 1
+    //         }
+    //     })
+
+    //     tl.to(".eachCard",
+    //     { "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)", 
+    //    opacity : 1,
+    //    y : 0,
+    //    duration : 0.5},)
+    // }, [])
     return(<>
   <Backg className="back" showsign={showSign}>
        <div className="closesign" onClick={()=> setShowSign(false)}>
@@ -61,7 +83,7 @@ export const Delist = () =>{
             </Form>
         </Book>
        </Backg>
-<Delivery_list>
+<Delivery_list className=".eachCard">
             <Delivery check={false} image="bus.png" title="Easy Delivery" 
             message="ipsum dolor sit amet consectetur arem unde eum aperiam porro eaque doloribus hic dolor?" />
             <Delivery check={false} image="secure.png" title="Secured Payment"

@@ -183,6 +183,7 @@ export const Delivery_card = styled.div`
         border : 1px solid #D3EDF8;
         border-radius: 5px;
         text-align: center;
+        
 
         img{
             height: 80px;
@@ -207,16 +208,25 @@ export const Delivery_card = styled.div`
             cursor: pointer;
         }
 
+        @media (max-width: 720px) {
+            margin-top: 20px;
+        }
+
 `
 
 export const Delivery_list = styled.div`
-    width : 80vw;
+    width : 100vw;
+    padding : 0px 10vw;
     margin : 100px auto;
     display: flex;
     flex-wrap: wrap;
+    /* border : 1px solid blue; */
     gap : 1rem;
     justify-content: center;
     align-items : center;
+    /* transform: translateY(-100px);
+            clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+            opacity: 0; */
 
     @media (max-width : 720px) {
         width : 100vw;
