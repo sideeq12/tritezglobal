@@ -4,9 +4,9 @@ import styled from "styled-components";
 export const Welc = styled.div`
     border: 10px;
     width : 90vw;
-    margin: 0px auto;
-    height: 90vh;
-    padding : 0px 0px 30px 0px;
+    margin: -20px auto 0px;
+    height: 95vh;
+    padding : 20px 0px 30px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,7 +127,7 @@ export const Welc = styled.div`
         width : 100vw;
         height: fit-content;
         flex-direction: column-reverse;
-        padding : 50px 10px 20px;
+        padding : 50px 10px 40px;
 
         .left, .right{
             width : 80%;
