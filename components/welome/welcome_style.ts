@@ -125,7 +125,7 @@ export const Welc = styled.div`
     }
     @media (max-width: 720px) {
         width : 100vw;
-        height: 90vh;
+        height: fit-content;
         flex-direction: column-reverse;
         padding : 50px 10px 20px;
 
