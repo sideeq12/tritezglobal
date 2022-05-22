@@ -11,7 +11,8 @@ export const Nav = styled.div`
     font-family: 'Montserrat';
     margin: 0px auto;
     margin-bottom: 20px;
-    height: 60px;
+    height: 80px;
+    /* border : 1px solid blue; */
     display: flex;
     justify-content: space-between;
     background: #FFFFFF;
