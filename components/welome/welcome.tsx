@@ -9,11 +9,20 @@ export const Welcome = () =>{
     useEffect(()=>{
         let tl = gsap.timeline({ default : { ease : Power4.easeInOut, duration : 2}});
         // let flagPoles = gsap.cCSSPlugin.getRule(".welcome")
+        tl.to(".mode, .cust", {  
+            opacity : 1,
+            y : 0,
+            x : 0,
+            duration : 0.5, scale : 1})
 
-        tl.to("h2, p, .lab", { "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)", 
+        tl.to("h2, p, .left a, .lab", { "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)", 
          opacity : 1,
          y : 0,
-         duration : 1.5})
+         duration : 0.5})
+         tl.to(".welcome", {  
+         opacity : 1,
+         y : 0,
+         duration : 0.5, delay : 0.1, scale : 1})
     }, [])
     return(
       <Ganimate>

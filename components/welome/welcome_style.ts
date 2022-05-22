@@ -50,6 +50,9 @@ export const Welc = styled.div`
             color : white;
             padding : 10px 50px;
             font-family: "Meontserrat";
+            transform: translateY(100px);
+            clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+            opacity: 0;
         }
     }
     .right{
@@ -62,7 +65,8 @@ export const Welc = styled.div`
         img.welcome{
             height: 100%;
             z-index: 1;
-            /* opacity: 0; */
+            opacity: 0;
+            transform: scale(0.3);
             
         }
         .cust{
@@ -70,6 +74,9 @@ export const Welc = styled.div`
             position: absolute;
             left: -100px;
             bottom: 50px;
+            transform: scale(0.3);
+            transform: translateX(100px);
+            opacity: 0;
             img{
                 height: 100px;
                 width : 200px
@@ -82,6 +89,9 @@ export const Welc = styled.div`
             background-color: rgba(255,255,255, 0.7);
             border-radius: 5px;
             left: -60px;
+            transform: scale(0.3);
+            transform: translateX(-100px);
+            opacity: 0;
             img{
                 height: 60px;
                 width : 150px
