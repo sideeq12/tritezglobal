@@ -50,9 +50,18 @@ export const Footer_style = styled.div`
 
     @media (max-width : 720px){
         div.first{
-            .details, ul{
+            .details{
                 width : 40%;
             }
+            ul{
+                margin-left: -30px;
+                width : 50%;
+            }
+        }
+        div.second{
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
         }
     }
 
