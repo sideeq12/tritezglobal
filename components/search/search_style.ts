@@ -67,22 +67,28 @@ export const Search_style = styled.div`
         height: 40px;
         width : fit-content;
     border-top-left-radius: 5px;
+    border-radius: none;
+    margin : 10px 30px;
     .category{
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
         display: none;
     }
     div{
-        width : 30%;
+        width : fit-content; 
     }
     div select{
-        width : 100px;
+        width : 60px;
         font-size: x-small;
+        margin-left: 50px;
+        margin-right: 20px;
+        text-align: left;
     }
 
     .search{
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
+        width: 50vw;
     }
     }
 `
