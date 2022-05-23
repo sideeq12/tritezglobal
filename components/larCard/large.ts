@@ -47,8 +47,8 @@ export const Larger = styled.div<Props>`
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
         background-image: url(${props => props.first});
-        background-position: center;
         background-size: cover;
+        background-position: center;
         background-repeat: no-repeat;
         img{
             border-top-right-radius: 10px;

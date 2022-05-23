@@ -1,11 +1,32 @@
 
 import { Card } from "./card"
-import { Card_List, Coverchain } from "./cardstyle"
+import { Card_List, CHA, Coverchain } from "./cardstyle"
 import { database } from "./database"
 import Link from "next/link"
+import { useState } from "react"
 
 export const CardList = ()=>{
-    const product = database.slice(0, 8)
+    const product = database.slice(0, 8);
+
+    const[allProduct, setAllProduct ]= useState(true)
+    const[clothes, setClothes ]= useState(false)
+    const [accessories, setAccessories ]= useState(false)
+
+    const changeAll = ()=>{
+        setClothes(false);
+        setAccessories(false)
+        setAllProduct(true)
+    }
+    const changeClothes = ()=>{
+        setClothes(true);
+        setAccessories(false)
+        setAllProduct(false)
+    }
+    const changeAcc= ()=>{
+        setClothes(false);
+        setAccessories(true)
+        setAllProduct(false)
+    }
     return(
         <Coverchain>
             <div className="change">
@@ -17,9 +38,9 @@ export const CardList = ()=>{
                          nisi nesciunt di?</p>
                 </div>
                 <div className="action">
-                        <div className="cha" onClick={()=>{}} >All products</div>
-                        <div className="cha" onClick={()=>{}}>Clothes</div>
-                        <div className="cha" onClick={()=>{}}>Accessories</div>
+                        <CHA className="cha" bord={allProduct} onClick={()=>{changeAll()}} >All products</CHA>
+                        <CHA className="cha" bord={clothes} onClick={()=>{changeClothes()}} >Clothes</CHA>
+                        <CHA className="cha" bord={accessories} onClick={()=>{changeAcc()}} >Accesories</CHA>
                 </div>
             </div>
             <Card_List>

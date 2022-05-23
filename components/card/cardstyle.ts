@@ -5,6 +5,9 @@ interface details{
     color : string,
     stock : boolean
 }
+interface swit{
+    bord : boolean
+}
 export const Card_Layout = styled.div<details>`
         font-family: 'Montserrat';
         height:  300px;
@@ -161,11 +164,11 @@ export const Coverchain = styled.div`
                 margin-left: auto;
                 .cha{
                     margin-right: 15px;
-                    border-bottom: 1px solid #34ADDC;
+                    
                     padding-bottom: 5px;
                     &:hover{
                         cursor: pointer;
-                    border-bottom: 2px solid #34ADDC;
+                    /* border-bottom: 2px solid #34ADDC; */
                 }
                 }
             }
@@ -201,4 +204,7 @@ export const Coverchain = styled.div`
             }
         }
     }
+`
+export const CHA = styled.div<swit>`
+    border-bottom: ${props => props.bord ? "2px solid #34ADDC" : "none"};
 `

@@ -70,6 +70,7 @@ export const Search_style = styled.div`
     .category{
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
+        display: none;
     }
     div{
         width : 30%;
