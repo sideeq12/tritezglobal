@@ -65,7 +65,7 @@ export const Search_style = styled.div`
 
     @media (max-width : 720px) {
         height: 40px;
-        width : 95vw;
+        width : fit-content;
     border-top-left-radius: 5px;
     .category{
         border-top-left-radius: 5px;
