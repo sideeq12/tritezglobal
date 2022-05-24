@@ -12,11 +12,10 @@ export const Mission_style = styled.div`
     margin : 50px auto;
     font-family: "Tinos";
 
-    h2,p{
-        transform: translateY(-100px);
-            clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-            opacity: 0;
-    }
+        transform: translateY(100px);
+        clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+        opacity: 0;
+    
     p{
         width : 60%;
         text-align: center;

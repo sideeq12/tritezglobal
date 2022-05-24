@@ -15,7 +15,7 @@ export const Welcome = () =>{
             x : 0,
             duration : 0.5, scale : 1})
 
-        tl.to("h2, p, .left a, .lab", { "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)", 
+        tl.to(".ref, .refl, .left a, .lab", { "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)", 
          opacity : 1,
          y : 0,
          duration : 0.5})
@@ -29,10 +29,10 @@ export const Welcome = () =>{
             <Welc>
             <div className="left">
             <label htmlFor="tritez label" className="lab">Trendy Collection</label>
-            <h2>
+            <h2 className="ref">
                 Fashion that reflects what your identity are!
             </h2>
-            <p>Anyone can beat you but no one can beat your outfit as you wear tritez.</p>
+            <p className="refl">Anyone can beat you but no one can beat your outfit as you wear tritez.</p>
             <Link  className="stat" href="/products_list">Get started</Link>
             </div>
             <div className="right">
