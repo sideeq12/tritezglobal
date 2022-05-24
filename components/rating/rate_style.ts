@@ -78,6 +78,7 @@ export const Rates = styled.div`
         }
         .left{
             height: fit-content;
+            margin-top: 20px;
             padding : 0px 10px;
             width : 100%;
         }

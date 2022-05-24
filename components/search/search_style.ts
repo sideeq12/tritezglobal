@@ -68,7 +68,7 @@ export const Search_style = styled.div`
         width : fit-content;
     border-top-left-radius: 5px;
     border-radius: none;
-    margin : 10px 30px;
+    margin : 10px 20px;
     .category{
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
