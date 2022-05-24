@@ -10,7 +10,8 @@ export const Delist = () =>{
 
     gsap.registerPlugin(ScrollTrigger, Power3)
     useEffect(()=>{
-       gsap.to(".eachCard", {"clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)", 
+       gsap.to(".eachCard", {"clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+       opacity :1 ,
        y : 0,
        duration : 0.5, delay : 0.1, scale : 1, ease : Power4.easeInOut
 
