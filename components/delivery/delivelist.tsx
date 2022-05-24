@@ -8,15 +8,15 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 export const Delist = () =>{
     const [showSign, setShowSign] = useState(false)
 
-    gsap.registerPlugin(ScrollTrigger, Power3)
-    useEffect(()=>{
-        let tl = gsap.timeline({ default : { ease : Power4.easeInOut, duration : 2}});
-       tl.to(".eachCard", {"clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-       opacity :1 ,
-       y : 0,
-       duration : 0.5,
-       })
-    }, [])
+    // gsap.registerPlugin(ScrollTrigger, Power3)
+    // useEffect(()=>{
+    //     let tl = gsap.timeline({ default : { ease : Power4.easeInOut, duration : 2}});
+    //    tl.to(".eachCard", {"clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+    //    opacity :1 ,
+    //    y : 0,
+    //    duration : 0.5,
+    //    })
+    // }, [])
     return(<>
   <Backg className="back" showsign={showSign}>
        <div className="closesign" onClick={()=> setShowSign(false)}>
