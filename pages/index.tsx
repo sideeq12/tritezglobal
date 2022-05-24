@@ -15,11 +15,12 @@ const Home: NextPage = () => {
   
   return (
     <>
-     <Welcome />
+     {/* <Welcome />
     <Mission />
     <Delist />
     <CardList />
-    <SlidesShow />
+    <SlidesShow /> */}
+    <Test />
     </>
   )
 }
