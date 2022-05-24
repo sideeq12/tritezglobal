@@ -224,9 +224,9 @@ export const Delivery_list = styled.div`
     gap : 1rem;
     justify-content: center;
     align-items : center;
-    /* transform: translateY(-100px);
+    transform: translateY(-100px);
             clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-            opacity: 0; */
+            opacity: 0;
 
     @media (max-width : 720px) {
         width : 100vw;

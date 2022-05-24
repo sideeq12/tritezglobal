@@ -1,31 +1,21 @@
 import { Delivery } from "./delivery"
 import { Delivery_list,Backg,Book, Message, Data, Form,Button } from "./deli_style"
 import { useState , useEffect} from "react"
-import { gsap , Power3} from "gsap"
+import { gsap , Power3, Power4} from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 
 
 export const Delist = () =>{
     const [showSign, setShowSign] = useState(false)
 
-    // gsap.registerPlugin(ScrollTrigger, Power3)
-    // useEffect(()=>{
-    //     let tl = gsap.timeline({
-    //         scrollTrigger : {
-    //             trigger : ".eachCard",
-    //             pin : true,
-    //             start : "30%",
-    //             end : "+=500",
-    //             scrub : 1
-    //         }
-    //     })
+    gsap.registerPlugin(ScrollTrigger, Power3)
+    useEffect(()=>{
+       gsap.to(".eachCard", {"clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)", 
+       y : 0,
+       duration : 0.5, delay : 0.1, scale : 1, ease : Power4.easeInOut
 
-    //     tl.to(".eachCard",
-    //     { "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)", 
-    //    opacity : 1,
-    //    y : 0,
-    //    duration : 0.5},)
-    // }, [])
+       })
+    }, [])
     return(<>
   <Backg className="back" showsign={showSign}>
        <div className="closesign" onClick={()=> setShowSign(false)}>
