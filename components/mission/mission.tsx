@@ -12,7 +12,7 @@ export const Mission = () =>{
                 scrollTrigger :{
                     trigger : ".mission",
                     start : "top center",
-                    toggleActions : "play reset restart none",  
+                    toggleActions : "play none none none",  
                 },
              "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)", 
         opacity : 1,

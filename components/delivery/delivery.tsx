@@ -25,7 +25,7 @@ export  const Delivery = ({image, title, message , check} : Props)=>{
             scrollTrigger :{
                 trigger : ".mycard",
                 start : "top center",
-                toggleActions : "play reset restart none",  
+                toggleActions : "play none none none",  
             },
          "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)", 
     opacity : 1,

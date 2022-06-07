@@ -244,9 +244,12 @@ form {
 left : 5vw;
 top : 70px;
 
-    span label{
+
+    span {
+        label{
         font-size: 10px;
         padding : 3px 40px;
+    }
     }
     p, div{
         font-size: 10px;
@@ -321,7 +324,7 @@ margin : 10px auto;
 export const Data = styled.div`
 text-align: left;
 margin-bottom: 15px;
-font-size: 12px;
+font-size: 15px;
 
 input{
     margin-top : 5px;
