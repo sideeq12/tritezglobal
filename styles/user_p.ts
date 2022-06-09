@@ -59,6 +59,7 @@ export const My_link = styled.div`
     } 
     a.mai{
         color : #09668A;
+        display: none;
     }
 `
 export const Last = styled.div`
