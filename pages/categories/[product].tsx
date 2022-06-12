@@ -3,27 +3,42 @@ import { useRouter } from 'next/router'
 import { LargeCard } from '../../components/larCard/largecard';
 import { Sieve, Filter, Cate } from '../../styles/pr_list';
 import { Card } from '../../components/card/card';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { My_link, All } from '../../styles/user_p';
 import Link from "next/link"
-import { useEffect } from 'react';
 
 const Unique_category= (numberkey: number) => {
   const router = useRouter()
   let par : string;
   const { product } = router.query;
+  const [queryName, setQueryName ] = useState<string>("Blouse");
+  const [firstImage, setFirstImage ]= useState("braid.jpg");
+  const [secondImage, setSecondImage ] = useState("braid.jpg")
+  const [showFilter, setShowFilter ] = useState(true)
+  const [testing, setTesting] = useState("nothing is changed")
+
+
  
 
-  const [showFilter, setShowFilter ] = useState(true)
-  console.log(database.filter(word => word.category.includes("accessories")))
-  const result = database.filter( word => word.category.includes("Blouse"))
-  const rndInt = Math.floor(Math.random() * 6) + 1;
-  const image1 = result[rndInt].image_link
-  const rndInt2 = Math.floor(Math.random() * 6) + 1;
-  const image2 = result[rndInt2].image_link
+  const result = database.filter( word => word.category.includes(queryName))
+  const fixImage = (productCount : number )=>{
+      console.log("func initial with", productCount)
+    const rndInt = Math.floor(Math.random() * productCount) + 1;
+    const image1 = result[rndInt].image_link
+    image1 !== undefined ? setFirstImage(image1) : null;
+    const rndInt2 = Math.floor(Math.random() * productCount) + 1;
+    const image2 = result[rndInt2].image_link
+    image2 !== undefined ?  setSecondImage(image2) : null;
+  }
 
     useEffect(()=>{
-        console.log("the product is ", router.query)
+        if(product !== undefined){
+            setQueryName("data")
+            console.log("the product is ",queryName, "and the result is", result)
+            const productsCount = result.length 
+            console.log("the prc" + productsCount)
+            fixImage(productsCount)
+        }
     }, [product])
 
 
@@ -39,7 +54,7 @@ const Unique_category= (numberkey: number) => {
 </svg>
 <Link href="#" className="mai"><strong style={{"color" : "#09668A"}}>{product}</strong></Link>  
       </My_link>
-       <LargeCard image1={"/"+image1} image2={"/"+image2} name1={product} />
+       <LargeCard image1={"/"+firstImage} image2={"/"+secondImage} name1={product} />
     <Sieve>
             <select name="" id="">
                 <option value="">Category</option>
