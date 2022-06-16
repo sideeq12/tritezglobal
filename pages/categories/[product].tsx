@@ -11,35 +11,20 @@ const Unique_category= (numberkey: number) => {
   const router = useRouter()
   let par : string;
   const { product } = router.query;
-  const [queryName, setQueryName ] = useState<string>("Blouse");
+  console.log("the router query is", product)
+  const [queryName, setQueryName ] = useState("Blouse");
   const [firstImage, setFirstImage ]= useState("braid.jpg");
   const [secondImage, setSecondImage ] = useState("braid.jpg")
   const [showFilter, setShowFilter ] = useState(true)
   const [testing, setTesting] = useState("nothing is changed")
 
 
- 
-
   const result = database.filter( word => word.category.includes(queryName))
-  const fixImage = (productCount : number )=>{
-      console.log("func initial with", productCount)
-    const rndInt = Math.floor(Math.random() * productCount) + 1;
-    const image1 = result[rndInt].image_link
-    image1 !== undefined ? setFirstImage(image1) : null;
-    const rndInt2 = Math.floor(Math.random() * productCount) + 1;
-    const image2 = result[rndInt2].image_link
-    image2 !== undefined ?  setSecondImage(image2) : null;
-  }
 
-    useEffect(()=>{
-        if(product !== undefined){
-            setQueryName("data")
-            console.log("the product is ",queryName, "and the result is", result)
-            const productsCount = result.length 
-            console.log("the prc" + productsCount)
-            fixImage(productsCount)
-        }
-    }, [product])
+  const rndInt = Math.floor(Math.random() * 3) + 1;
+  const image1 = result[rndInt].image_link
+  const rndInt2 = Math.floor(Math.random() * 3) + 1;
+  const image2 = result[rndInt2].image_link
 
 
 
@@ -54,7 +39,7 @@ const Unique_category= (numberkey: number) => {
 </svg>
 <Link href="#" className="mai"><strong style={{"color" : "#09668A"}}>{product}</strong></Link>  
       </My_link>
-       <LargeCard image1={"/"+firstImage} image2={"/"+secondImage} name1={product} />
+       <LargeCard image1={"/"+image1} image2={"/"+image2} name1={product} />
     <Sieve>
             <select name="" id="">
                 <option value="">Category</option>

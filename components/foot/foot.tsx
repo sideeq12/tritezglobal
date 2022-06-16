@@ -6,7 +6,7 @@ export const Footer = ()=>{
         <Footer_style>
             <div className="first">
                 <div className="details">
-                    <img src="tritezlogo.png" alt="tritez logo market place" />
+                    <img src="/tritezlogo.png" alt="tritez logo market place" />
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                          Optio nobis dolore 
                         adipisci dicta ea voluptatem, ad Deleniti?</p>
