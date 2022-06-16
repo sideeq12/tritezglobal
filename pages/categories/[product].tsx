@@ -12,23 +12,29 @@ const Unique_category= (numberkey: number) => {
   let par : string;
   const { product } = router.query;
   console.log("the router query is", product)
+  if(product){
+      console.log("loading finished")
+
+  }
   const [queryName, setQueryName ] = useState("Blouse");
-  const [firstImage, setFirstImage ]= useState("braid.jpg");
-  const [secondImage, setSecondImage ] = useState("braid.jpg")
   const [showFilter, setShowFilter ] = useState(true)
   const [testing, setTesting] = useState("nothing is changed")
 
 
-  const result = database.filter( word => word.category.includes(queryName))
-
+if(product !== undefined){
+    var prod = product as string
+}else{
+    var prod : string = "Blouse"
+}
+  const result = database.filter( word => word.category.includes(prod));
   const rndInt = Math.floor(Math.random() * 3) + 1;
   const image1 = result[rndInt].image_link
   const rndInt2 = Math.floor(Math.random() * 3) + 1;
   const image2 = result[rndInt2].image_link
 
 
-
-  return (<All>
+  return (<>
+  { !product ? "loading" : <All>
       <My_link>
       <Link href="/">Home </Link>
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
@@ -142,7 +148,8 @@ const Unique_category= (numberkey: number) => {
             <Link href="/" className="next">Next</Link>
             </div>
         </Filter>
-  </All>
+  </All>}
+  </>
   )
 }
 
