@@ -9,7 +9,18 @@ import main from "../database/connection"
 export default function getUsers(req : NextApiRequest, res : NextApiResponse){
     main().catch(error => console.log(error));
     const create = new User({
-        name : "hello test"
+        full_name : "WaheedSodiq",
+        password : "sideeqtest",
+        imageUrl : "imageUrl",
+        myOrders : [{
+            id : 2,
+            address : "oriire area shaki",
+            order : [{
+                id : 3,
+                name : "Latest Clothes",
+                price : 34
+            }]
+        }]
     })
     create.save().then(()=> {
         res.status(200).json(create)
