@@ -5,7 +5,6 @@ interface skeletonType {
     type : string
 }
 const SkeletonELement = ({type} : skeletonType)=>{
-    // const classes = `skeleton ${type}`
     return(
         <Skeleton type={type}></Skeleton>
     )

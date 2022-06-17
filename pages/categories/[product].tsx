@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { My_link, All } from '../../styles/user_p';
 import Link from "next/link"
 import SkeletonArticle from '../../components/skeletonloader/skeletonArticle';
+import { LargeSkeleton } from '../../components/skeletonloader/largeSketon';
 
 const Unique_category= (numberkey: number) => {
   const router = useRouter()
@@ -14,6 +15,11 @@ const Unique_category= (numberkey: number) => {
   const { product } = router.query;
   const [showFilter, setShowFilter ] = useState(true)
 
+  const skestyle = {
+      "display" : "flex",
+      "flexWrap" : "wrap",
+      "width" : "100%"
+  }
 
 if(product !== undefined){
     var prod = product as string
@@ -40,7 +46,9 @@ if(product !== undefined){
 </svg>
 <Link href="#" className="mai"><strong style={{"color" : "#09668A"}}>{product}</strong></Link>  
       </My_link>
-       {product ? <LargeCard image1={"/"+image1} image2={"/"+image2} name1={product} /> : <SkeletonArticle theme='' />}
+       {product ? 
+       <LargeCard image1={"/"+image1} image2={"/"+image2} name1={product} /> 
+       : <LargeSkeleton />}
     <Sieve>
             <select name="" id="">
                 <option value="">Category</option>
@@ -141,7 +149,7 @@ if(product !== undefined){
              in_stock={data.instock}
              items_left={data.items_left}
              />)}
-            </div> : <>No products Found</>}</> : <>Loading..</>
+            </div> : <>No products Found</>}</> : <SkeletonArticle />
             }
             <Link href="/" className="next">Next</Link>
             </div>

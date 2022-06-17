@@ -3,11 +3,14 @@ import styled from "styled-components"
 
 export const SkeletonWrapper = styled.div`
     margin : 20px auto;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 5px 10px;
+    border-radius: 2px;
     position: relative;
     overflow: hidden;
+    /* border : 1px solid red; */
+    width : 200px;
     background : #f2f2f2;
+    height: 180px;
 `
 export const skeletonArticle = styled.div`
 `
@@ -17,9 +20,9 @@ interface  skeleType {
 export const Skeleton = styled.div<skeleType>`
     background-color: #ddd;
     margin : 10px 0;
-    border-radius: 4px;
-    height:${props => props.type == "title" ? " 25px" : "12px"};
-    width : ${props => props.type == "title" ? " 40%" : "100%"};
+    border-radius: 2px;
+    height:${props => props.type == "title" ? " 100px" : "10px"};
+    width : ${props => props.type == "title" ? " 100%" : "100%"};
     margin-bottom: ${props => props.type == "title" ? " 12px" : "0px"};;
 `
 
@@ -50,61 +53,14 @@ export const ShimmerWrapper = styled.div`
 }
 }
 `
+export const LargeWrapper = styled.div`
+    margin : 20px auto;
+    padding: 10px 15px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    background : #ddd;
+    height: 200px;
+    width : 90vw;
+`
 
-
-//  .shimmer-wrapper{
-//     width: 100%;
-//     height: 100%;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     animation: laoding 2.4s infinite;
-// }
-
-// .dark .shimmer{
-//     background : rgba(255, 255, 255, 0.13);
-// }
-
-
-// .skeleton-wrapper.dark .skeleton{
-//     background : #777;
-// }
-// .skeleton-wrapper.light, .user-wrap.light{
-//     background : #f2f2f2;
-// }
-// .skeleton-wrapper.dark, .user-wrap.dark{
-//     background : #444;
-// }
-
-// skeleton{
-//     background-color: #ddd;
-//     margin : 10px 0;
-//     border-radius: 4px;
-// }
-// .skeleton.title{
-//     height: 25px;
-//     margin-bottom: 12px;
-//     width: 40%;
-// }
-
-// .skeleton.text{
-//     width: 100%;
-//     height: 12px;
-// }
-// .skeleton-wrapper{
-//     margin : 20px auto;
-//     padding: 10px 15px;
-//     border-radius: 5px;
-//     position: relative;
-//     overflow: hidden;
-// }
-// .user-wrap{
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content:center;
-//     padding : 10px 15px;
-//     border-radius: 5px;
-//     position: relative;
-//     overflow: hidden;
-// }
