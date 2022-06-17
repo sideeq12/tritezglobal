@@ -11,14 +11,7 @@ const Unique_category= (numberkey: number) => {
   const router = useRouter()
   let par : string;
   const { product } = router.query;
-  console.log("the router query is", product)
-  if(product){
-      console.log("loading finished")
-
-  }
-  const [queryName, setQueryName ] = useState("Blouse");
   const [showFilter, setShowFilter ] = useState(true)
-  const [testing, setTesting] = useState("nothing is changed")
 
 
 if(product !== undefined){
@@ -27,14 +20,15 @@ if(product !== undefined){
     var prod : string = "Blouse"
 }
   const result = database.filter( word => word.category.includes(prod));
-  const rndInt = Math.floor(Math.random() * 3) + 1;
+  const product_length = result.length;
+  const rndInt = Math.floor(Math.random() * (product_length-1)) + 1;
   const image1 = result[rndInt].image_link
-  const rndInt2 = Math.floor(Math.random() * 3) + 1;
+  const rndInt2 = Math.floor(Math.random() * (product_length -1 )) + 1;
   const image2 = result[rndInt2].image_link
 
 
   return (<>
-  { !product ? "loading" : <All>
+   <All>
       <My_link>
       <Link href="/">Home </Link>
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
@@ -45,7 +39,7 @@ if(product !== undefined){
 </svg>
 <Link href="#" className="mai"><strong style={{"color" : "#09668A"}}>{product}</strong></Link>  
       </My_link>
-       <LargeCard image1={"/"+image1} image2={"/"+image2} name1={product} />
+       {product ? <LargeCard image1={"/"+image1} image2={"/"+image2} name1={product} /> : <>Loading..</>}
     <Sieve>
             <select name="" id="">
                 <option value="">Category</option>
@@ -133,7 +127,9 @@ if(product !== undefined){
                     </span>
                     <span>234 <label htmlFor="">Products showed</label> </span>
                 </div>
-            {result.length > 1 ? <div className="cart_show">
+            {
+                product !== undefined ? <>
+                {result.length > 1 ? <div className="cart_show">
             {result.map((data)=> <Card  key={Math.floor(Math.random()*999)}
              name={data.name}
              imageLink={"/"+data.image_link}
@@ -144,11 +140,12 @@ if(product !== undefined){
              in_stock={data.instock}
              items_left={data.items_left}
              />)}
-            </div> : <>No products Found</>}
+            </div> : <>No products Found</>}</> : <>Loading..</>
+            }
             <Link href="/" className="next">Next</Link>
             </div>
         </Filter>
-  </All>}
+  </All>
   </>
   )
 }
