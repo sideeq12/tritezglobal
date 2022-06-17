@@ -6,6 +6,7 @@ import { Card } from '../../components/card/card';
 import { useState, useEffect } from 'react';
 import { My_link, All } from '../../styles/user_p';
 import Link from "next/link"
+import SkeletonArticle from '../../components/skeletonloader/skeletonArticle';
 
 const Unique_category= (numberkey: number) => {
   const router = useRouter()
@@ -39,7 +40,7 @@ if(product !== undefined){
 </svg>
 <Link href="#" className="mai"><strong style={{"color" : "#09668A"}}>{product}</strong></Link>  
       </My_link>
-       {product ? <LargeCard image1={"/"+image1} image2={"/"+image2} name1={product} /> : <>Loading..</>}
+       {product ? <LargeCard image1={"/"+image1} image2={"/"+image2} name1={product} /> : <SkeletonArticle theme='' />}
     <Sieve>
             <select name="" id="">
                 <option value="">Category</option>
