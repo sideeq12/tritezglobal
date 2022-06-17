@@ -8,9 +8,9 @@ export const SkeletonWrapper = styled.div`
     position: relative;
     overflow: hidden;
     /* border : 1px solid red; */
-    width : 200px;
+    width : 280px;
     background : #f2f2f2;
-    height: 180px;
+    height: 250px;
 `
 export const skeletonArticle = styled.div`
 `
@@ -21,7 +21,7 @@ export const Skeleton = styled.div<skeleType>`
     background-color: #ddd;
     margin : 10px 0;
     border-radius: 2px;
-    height:${props => props.type == "title" ? " 100px" : "10px"};
+    height:${props => props.type == "title" ? " 160px" : "10px"};
     width : ${props => props.type == "title" ? " 100%" : "100%"};
     margin-bottom: ${props => props.type == "title" ? " 12px" : "0px"};;
 `
