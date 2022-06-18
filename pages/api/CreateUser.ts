@@ -14,6 +14,7 @@ export default function getUsers(req : NextApiRequest, res : NextApiResponse){
         full_name : "WaheedSodiq",
         password : "sideeqtest",
         imageUrl : "imageUrl",
+        email : "abdw@gmal",
         myOrders : [{
             id : 2,
             address : "oriire area shaki",
