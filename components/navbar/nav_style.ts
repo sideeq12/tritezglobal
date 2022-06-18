@@ -342,7 +342,7 @@ small{
 }
 `
 
-export const Button = styled.button`
+export const Button = styled.div`
 color : white;
 background-color:  #34ADDC;
 border-radius: 5px;
@@ -350,6 +350,12 @@ text-align: center;
 width: 300px;
 height: 32px;
 border: none;
+display: flex;
+align-items: center;
+justify-content: center;
+&:hover{
+    cursor: pointer;
+}
 
 @media (max-width : 720px) {
     width : 250px

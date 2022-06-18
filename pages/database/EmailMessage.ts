@@ -8,6 +8,6 @@ const Emailschema = new mongoose.Schema({
 
 })
 
-const Emailmessage =  mongoose.model("Users", Emailschema);
+const Emailmessage =  mongoose.model("Emails", Emailschema);
 
 export default Emailmessage;

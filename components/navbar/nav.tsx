@@ -1,5 +1,6 @@
 import { List, Lists, Logo, Nav, Sign_up, Label,Backg, Message, Google_sign, Newline, Form, Data, Button } from "./nav_style"
-import { useState } from "react"
+import React, { useState, useRef } from "react"
+// import { User } from "./UserClass"
 import { Right } from "./right_nav/right"
 import { Right_nav } from "./right_nav/right_nav"
 import Link from "next/link"
@@ -11,6 +12,22 @@ export const Navbar = ()=>{
     const [active, setActive] = useState(true)
     const [showSign, setShowSign ] = useState(false)
     const [showUser, setShowUser ] = useState(false)
+    const [user, setUser ] = useState({ userfullname : "", userEmail : "" , userPassword : ""})
+
+    const getUserData = (event: React.ChangeEvent<HTMLInputElement>) =>{
+    const userdetails = event.target.value;
+    const typeData = event.target.name;
+    if(typeData === "fullname"){
+        setUser({...user, userfullname : userdetails})
+    }else if(typeData === "email"){
+        setUser({...user, userEmail : userdetails})
+    }else if(typeData === "password"){
+        setUser({...user, userPassword : userdetails})
+    }
+    }
+    const sendUser = ()=>{
+        console.log("user is ", user)
+    }
     return(
         <>
        <Backg className="back" showsign={showSign}>
@@ -47,18 +64,18 @@ export const Navbar = ()=>{
             <Form>
                 <Data className="sign">
                 <label htmlFor="Full name"> Full name *</label> <br />
-                <input type="text"  required/>
+                <input type="text" name="fullname" onChange={getUserData} required/>
                 </Data>
                 <Data>
                 <label htmlFor="Full name"> Email *</label> <br />
-                <input type="email"  required/> <br />
+                <input type="email" name="email" onChange={getUserData} required/> <br />
                 <small>We will never share your email with anyone else</small>
                 </Data>
                 <Data>
                 <label htmlFor="Password"> Password*</label> <br />
-                <input type="password" placeholder="******"  required/>
+                <input type="password" name="password" onChange={getUserData}  placeholder="******"  required/>
                 </Data>
-                <Button>
+                <Button onClick={sendUser}>
                     {active ? (<>Create an account</>) : (<>Sign in</>)}
                 </Button>
             </Form>
