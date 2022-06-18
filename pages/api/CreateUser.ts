@@ -8,13 +8,13 @@ import main from "../database/connection"
 
 export default function getUsers(req : NextApiRequest, res : NextApiResponse){
     
-    // let params = req.body;
+    let params = req.body;
     main().catch(error => console.log(error));
     const create = new User({
-        full_name : "WaheedSodiq",
-        password : "sideeqtest",
+        full_name : params.userfullname,
+        password : params.userPassword,
         imageUrl : "imageUrl",
-        email : "abdw@gmal",
+        email : params.userEmail,
         myOrders : [{
             id : 2,
             address : "oriire area shaki",
