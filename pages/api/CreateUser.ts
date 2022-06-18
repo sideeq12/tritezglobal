@@ -28,7 +28,7 @@ export default function getUsers(req : NextApiRequest, res : NextApiResponse){
     create.save().then(()=> {
         res.status(200).json(create)
     })
-
+//     console.log("the env file is", process.env.MONGODB_URI)
 //     res.status(200).json({ users : "params", 
 //     result : params
 // })
