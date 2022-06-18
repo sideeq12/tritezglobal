@@ -4,6 +4,7 @@ import React, { useState, useRef } from "react"
 import { Right } from "./right_nav/right"
 import { Right_nav } from "./right_nav/right_nav"
 import Link from "next/link"
+import axios from "axios"
 
 export const Navbar = ()=>{
 
@@ -25,8 +26,12 @@ export const Navbar = ()=>{
         setUser({...user, userPassword : userdetails})
     }
     }
-    const sendUser = ()=>{
-        console.log("user is ", user)
+    const URL = "http://127.0.0.1:3000/api/CreateUser"
+    const sendUser = async ()=>{
+        if(active){
+            const res = await axios.post(URL, user)
+            console.log(res.data)
+        }else{ console.log("user is not creating new ", user)}
     }
     return(
         <>

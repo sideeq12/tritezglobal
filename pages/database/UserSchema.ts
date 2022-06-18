@@ -5,6 +5,7 @@ const Userschema = new mongoose.Schema({
     full_name : String,
     password : String,
     imageUrl : String,
+    email  : String,
     myOrders : [{
         id : Number,
         address : String,
@@ -17,6 +18,6 @@ const Userschema = new mongoose.Schema({
 
 })
 
-const User = mongoose.model("Users") || mongoose.model("Users", Userschema);
+const User =mongoose.model("Users", Userschema);
 
 export default User;
