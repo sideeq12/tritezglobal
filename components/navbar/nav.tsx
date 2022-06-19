@@ -27,11 +27,19 @@ export const Navbar = ()=>{
     }
     }
     const URL = "http://127.0.0.1:3000/api/CreateUser"
+    const loginUrl = "http://127.0.0.1:3000/api/login"
     const sendUser = async ()=>{
         if(active){
             const res = await axios.post(URL, user)
-            console.log(res.data)
-        }else{ console.log("user is not creating new ", user)}
+            const response = res.data;
+            localStorage.setItem("User",JSON.stringify(response))
+            console.log("the local item is", localStorage.getItem("User"))
+        }else{ 
+            const res = await axios.post(loginUrl, user)
+            const response = res.data;
+            localStorage.setItem("User", JSON.stringify(response))
+            console.log("the local item is", localStorage.getItem("User"))
+        }
     }
     return(
         <>

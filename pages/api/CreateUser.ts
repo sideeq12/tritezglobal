@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import User from "../database/UserSchema"
 import main from "../database/connection"
+import bcrypt from "bcryptjs"
 
 // type Data = {
 //     users :any
@@ -12,7 +13,7 @@ export default function getUsers(req : NextApiRequest, res : NextApiResponse){
     main().catch(error => console.log(error));
     const create = new User({
         full_name : params.userfullname,
-        password : params.userPassword,
+        password : bcrypt.hashSync(params.userPassword),
         imageUrl : "imageUrl",
         email : params.userEmail,
         myOrders : [{
@@ -28,7 +29,7 @@ export default function getUsers(req : NextApiRequest, res : NextApiResponse){
     create.save().then(()=> {
         res.status(200).json(create)
     })
-//     console.log("the env file is", process.env.MONGODB_URI)
+//     console.log("the env file is", )
 //     res.status(200).json({ users : "params", 
 //     result : params
 // })
