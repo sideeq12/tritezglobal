@@ -1,5 +1,5 @@
 import { List, Lists, Logo, Nav, Sign_up, Label,Backg, Message, Google_sign, Newline, Form, Data, Button } from "./nav_style"
-import React, { useState, useRef } from "react"
+import React, { useState, useRef, useEffect } from "react"
 // import { User } from "./UserClass"
 import { Right } from "./right_nav/right"
 import { Right_nav } from "./right_nav/right_nav"
@@ -14,6 +14,7 @@ export const Navbar = ()=>{
     const [showSign, setShowSign ] = useState(false)
     const [showUser, setShowUser ] = useState(false)
     const [user, setUser ] = useState({ userfullname : "", userEmail : "" , userPassword : ""})
+    let User : any;
 
     const getUserData = (event: React.ChangeEvent<HTMLInputElement>) =>{
     const userdetails = event.target.value;
@@ -41,6 +42,13 @@ export const Navbar = ()=>{
             console.log("the local item is", localStorage.getItem("User"))
         }
     }
+    useEffect(()=>{
+        if(localStorage.getItem("User")){
+             User = JSON.parse(localStorage.getItem("User"))
+        }else{
+
+        }
+    }, [])
     return(
         <>
        <Backg className="back" showsign={showSign}>
@@ -142,11 +150,11 @@ export const Navbar = ()=>{
 </svg> 
                 </Link>
                </div>
-                <div  className="search" onClick={()=> setShowSign(true)}>
+               {User ? <>{User.fullname}</> :  <div  className="search" onClick={()=> setShowSign(true)}>
                 <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person" viewBox="0 0 16 16">
   <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
 </svg>
-                </div>
+                </div>}
                <div  className="cart">
                <Link href="/user_cart">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-cart3" viewBox="0 0 16 16">

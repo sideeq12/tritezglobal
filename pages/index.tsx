@@ -12,7 +12,8 @@ import { Welcome } from '../components/welome/welcome'
 
 
 const Home: NextPage = () => {
-  
+  // if (typeof window !== 'undefined') {
+  //   console.log('You are on the browser')}
   return (
     <>
      <Welcome />

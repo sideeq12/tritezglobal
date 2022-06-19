@@ -2,10 +2,19 @@ import {My_address } from "../components/address _billing/address"
 import { Cartvl } from "../components/cart_view/cart_vl";
 import { Pay_cov, My_link } from "../styles/user_p";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Payment_page = ()=>{
+    const router = useRouter()
+    let Userdetails : any;
+   useEffect(()=>{
+    if(localStorage.getItem("User")){
+    }else{
+        router.push("/")
+    }
+   })
     return(
-
 <>
 <My_link>
     <Link href="/">Home </Link>
