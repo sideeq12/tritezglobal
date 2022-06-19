@@ -1,10 +1,11 @@
 import { List, Lists, Logo, Nav, Sign_up, Label,Backg, Message, Google_sign, Newline, Form, Data, Button } from "./nav_style"
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useRef, useEffect, useTransition } from "react"
 // import { User } from "./UserClass"
 import { Right } from "./right_nav/right"
 import { Right_nav } from "./right_nav/right_nav"
 import Link from "next/link"
 import axios from "axios"
+import cookie from "js-cookie"
 
 export const Navbar = ()=>{
 
@@ -14,7 +15,25 @@ export const Navbar = ()=>{
     const [showSign, setShowSign ] = useState(false)
     const [showUser, setShowUser ] = useState(false)
     const [user, setUser ] = useState({ userfullname : "", userEmail : "" , userPassword : ""})
-    let User : any;
+
+    const theCookies = cookie.get("MyUser");
+    let Value : any;
+    let User : any ;
+    if(theCookies){
+        User = JSON.parse(theCookies);
+        // setUserInfo(User);
+        console.log("the cookies success", User)
+        Value = <span>{User.full_name}</span>
+        // setIsUser(true)
+    }else{
+        console.log("the cookies is not working")
+        Value = <div  className="search" onClick={()=> setShowSign(true)}>
+        <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person" viewBox="0 0 16 16">
+<path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+</svg>
+        </div>
+    }
+    
 
     const getUserData = (event: React.ChangeEvent<HTMLInputElement>) =>{
     const userdetails = event.target.value;
@@ -27,28 +46,15 @@ export const Navbar = ()=>{
         setUser({...user, userPassword : userdetails})
     }
     }
-    const URL = "http://127.0.0.1:3000/api/CreateUser"
-    const loginUrl = "http://127.0.0.1:3000/api/login"
+    const URL : string = active ? "http://127.0.0.1:3000/api/CreateUser" : "http://127.0.0.1:3000/api/login"
+
     const sendUser = async ()=>{
-        if(active){
             const res = await axios.post(URL, user)
             const response = res.data;
-            localStorage.setItem("User",JSON.stringify(response))
-            console.log("the local item is", localStorage.getItem("User"))
-        }else{ 
-            const res = await axios.post(loginUrl, user)
-            const response = res.data;
-            localStorage.setItem("User", JSON.stringify(response))
-            console.log("the local item is", localStorage.getItem("User"))
-        }
+            cookie.set("MyUser", JSON.stringify(response), { expires : 1/24})
     }
-    useEffect(()=>{
-        if(localStorage.getItem("User")){
-             User = JSON.parse(localStorage.getItem("User"))
-        }else{
-
-        }
-    }, [])
+    
+   
     return(
         <>
        <Backg className="back" showsign={showSign}>
@@ -126,7 +132,8 @@ export const Navbar = ()=>{
                 <label htmlFor="/Clothes">Clothes</label>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
   <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-</svg> </span>        <ul>
+</svg> </span>    
+    <ul>
                     <li><Link href="/categories/Tops">Tops</Link></li>
                     <li><Link href="/categories/Shirt">Shirts</Link></li>
                     <li><Link href="/categories/Trousers">Trousers</Link></li>
@@ -150,11 +157,7 @@ export const Navbar = ()=>{
 </svg> 
                 </Link>
                </div>
-               {User ? <>{User.fullname}</> :  <div  className="search" onClick={()=> setShowSign(true)}>
-                <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person" viewBox="0 0 16 16">
-  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-</svg>
-                </div>}
+               {Value}
                <div  className="cart">
                <Link href="/user_cart">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-cart3" viewBox="0 0 16 16">
