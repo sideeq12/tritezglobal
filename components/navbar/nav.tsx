@@ -22,7 +22,7 @@ export const Navbar = ()=>{
     if(theCookies){
         User = JSON.parse(theCookies);
         // setUserInfo(User);
-        console.log("the cookies success", User)
+        console.log("the cookies success ", User)
         Value = <span>{User.full_name}</span>
         // setIsUser(true)
     }else{
