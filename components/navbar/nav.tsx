@@ -61,13 +61,17 @@ export const Navbar = ()=>{
                 console.log("credential passed")
             const res = await axios.post(URL, user)
                 const response = res.data;
-            if(response.message === "success"){
-                cookie.set("MyUser", JSON.stringify(response), { expires : 1/24})
-            }else{
-                if(!active){
-                    setErrorMessage(response.message)
-                }
+           if(response.message === "used"){
+               setErrorMessage("Email has been used!")
+               console.log("used ", response.message)
+           }else if(response.message === "success"){
+            cookie.set("MyUser", JSON.stringify(response), { expires : 1/24});
+            console.log("cookies added")
+        }else{
+            if(!active){
+                setErrorMessage(response.message)
             }
+        }
             }
             
     }

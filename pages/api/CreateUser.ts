@@ -12,7 +12,7 @@ export default function getUsers(req : NextApiRequest, res : NextApiResponse){
     main().catch(error => console.log(error));
     const user = User.findOne({ email : params.userEmail}, (err : Error, result : any )=>{
         if(!err && result){
-            res.status(200).json({ message : "Email already used!"})
+            res.status(200).json({ message : "used"})
         }else if(!err &&!result){
             const create = new User({
                 full_name : params.userfullname,
