@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import User from "../database/UserSchema"
+import { User } from "../database/UserSchema"
 import main from "../database/connection"
 import bcrypt from "bcryptjs"
 
