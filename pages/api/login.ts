@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import User from "../database/UserSchema"
-import main from "../database/connection"
+import {User} from "../../database/UserSchema"
+import main from "../../database/connection"
 import bcrypt from "bcryptjs"
 import { signToken } from "./utils/auth";
 
