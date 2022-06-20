@@ -8,7 +8,6 @@ import bcrypt from "bcryptjs"
 // }
 
 export default function getUsers(req : NextApiRequest, res : NextApiResponse){
-    
     let params = req.body;
     main().catch(error => console.log(error));
     const create = new User({
@@ -27,10 +26,6 @@ export default function getUsers(req : NextApiRequest, res : NextApiResponse){
         }]
     })
     create.save().then(()=> {
-        res.status(200).json(create)
+        res.status(200).json({ message : "success", data : create})
     })
-//     console.log("the env file is", )
-//     res.status(200).json({ users : "params", 
-//     result : params
-// })
 }

@@ -1,4 +1,4 @@
-import {Err, List, Lists, Logo, Nav, Sign_up, Label,Backg, Message, Google_sign, Newline, Form, Data, Button } from "./nav_style"
+import {Err, Name, List, Lists, Logo, Nav, Sign_up, Label,Backg, Message, Google_sign, Newline, Form, Data, Button } from "./nav_style"
 import React, { useState, useRef, useEffect, useTransition } from "react"
 // import { User } from "./UserClass"
 import { Right } from "./right_nav/right"
@@ -15,15 +15,16 @@ export const Navbar = ()=>{
     const [showSign, setShowSign ] = useState(false)
     const [showUser, setShowUser ] = useState(false)
     const [user, setUser ] = useState({ userfullname : "", userEmail : "" , userPassword : ""})
-    const [errorMessage, setErrorMessage ] = useState("Email not valid!")
+    const [errorMessage, setErrorMessage ] = useState("")
 
     const theCookies = cookie.get("MyUser");
     let Value : any;
     let User : any ;
     if(theCookies){
-        User = JSON.parse(theCookies);
-        console.log("the cookies success", User)
-        Value = <span>{User.full_name}</span>
+        User = JSON.parse(theCookies).data;
+        console.log("the cookies success", User.full_name)
+        const displayName = User.full_name.split(" ")[0]
+        Value = <Name>Hi {displayName}</Name>
     }else{
         console.log("the cookies is not working")
         Value = <div  className="search" onClick={()=> setShowSign(true)}>
@@ -39,7 +40,6 @@ export const Navbar = ()=>{
     const typeData = event.target.name;
     if(typeData === "fullname"){
         if(userdetails.length < 6){
-            setErrorMessage("Enter Valid full name")
         }
         setUser({...user, userfullname : userdetails})
     }else if(typeData === "email"){
@@ -51,9 +51,25 @@ export const Navbar = ()=>{
     const URL : string = active ? "/api/CreateUser" : "/api/login"
 
     const sendUser = async ()=>{
+            if(user.userfullname.length < 10 && active){
+                setErrorMessage("Enter Valid full name")
+            }else if(!user.userEmail.includes("@") && !user.userEmail.includes(".")){
+                setErrorMessage("Invalid Email format");
+                console.log("email checked")
+            }else{
+                setErrorMessage("")
+                console.log("credential passed")
             const res = await axios.post(URL, user)
-            const response = res.data;
-            cookie.set("MyUser", JSON.stringify(response), { expires : 1/24})
+                const response = res.data;
+            if(response.message === "success"){
+                cookie.set("MyUser", JSON.stringify(response), { expires : 1/24})
+            }else{
+                if(!active){
+                    setErrorMessage(response.message)
+                }
+            }
+            }
+            
     }
     
    
@@ -153,6 +169,7 @@ export const Navbar = ()=>{
             </List>
             
             <Right>
+            {Value}
                <div className="search">
                <Link href="/searchpage">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
@@ -160,7 +177,6 @@ export const Navbar = ()=>{
 </svg> 
                 </Link>
                </div>
-               {Value}
                <div  className="cart">
                <Link href="/user_cart">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-cart3" viewBox="0 0 16 16">

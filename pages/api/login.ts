@@ -17,11 +17,11 @@ export default function getUsers(req : NextApiRequest, res : NextApiResponse){
             res.status(200).json({
                 token,
                 message : "success",_id : result._id, 
-                fullname : result.full_name,
+                data : result,
                 datakey : varai
             })
         }else{
-            res.status(200).json({message : "incorrect password"})
+            res.status(200).json({message : "Incorrect password"})
         }
        }else if(!err && result== null){
         res.status(200).json({

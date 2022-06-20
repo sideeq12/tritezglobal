@@ -3,10 +3,11 @@ import styled from "styled-components";
 
 export const Right = styled.div`
     display: flex;
-    width: 120px;
+    width: fit-content;
     align-items: center;
     height : fit-content;
     justify-content: space-around;
+    gap : 0.2rem;
     .search,.cart{
         border-radius: 100%;
         padding : 10px; 

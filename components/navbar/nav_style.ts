@@ -134,6 +134,12 @@ export const Err = styled.p`
     border : none;
     margin : 0px;
 `
+export const Name = styled.span`
+    font-size: small;
+    margin : 0px 2px;
+    width : fit-content;
+    /* border : 1px solid blue; */
+`
 
 
 
