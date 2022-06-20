@@ -46,7 +46,7 @@ export const Navbar = ()=>{
         setUser({...user, userPassword : userdetails})
     }
     }
-    const URL : string = active ? "http://127.0.0.1:3000/api/CreateUser" : "http://127.0.0.1:3000/api/login"
+    const URL : string = active ? "/api/CreateUser" : "/api/login"
 
     const sendUser = async ()=>{
             const res = await axios.post(URL, user)
