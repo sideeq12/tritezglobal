@@ -1,4 +1,4 @@
-import { List, Lists, Logo, Nav, Sign_up, Label,Backg, Message, Google_sign, Newline, Form, Data, Button } from "./nav_style"
+import {Err, List, Lists, Logo, Nav, Sign_up, Label,Backg, Message, Google_sign, Newline, Form, Data, Button } from "./nav_style"
 import React, { useState, useRef, useEffect, useTransition } from "react"
 // import { User } from "./UserClass"
 import { Right } from "./right_nav/right"
@@ -15,16 +15,15 @@ export const Navbar = ()=>{
     const [showSign, setShowSign ] = useState(false)
     const [showUser, setShowUser ] = useState(false)
     const [user, setUser ] = useState({ userfullname : "", userEmail : "" , userPassword : ""})
+    const [errorMessage, setErrorMessage ] = useState("Email not valid!")
 
     const theCookies = cookie.get("MyUser");
     let Value : any;
     let User : any ;
     if(theCookies){
         User = JSON.parse(theCookies);
-        // setUserInfo(User);
-        console.log("the cookies success ", User)
+        console.log("the cookies success", User)
         Value = <span>{User.full_name}</span>
-        // setIsUser(true)
     }else{
         console.log("the cookies is not working")
         Value = <div  className="search" onClick={()=> setShowSign(true)}>
@@ -39,6 +38,9 @@ export const Navbar = ()=>{
     const userdetails = event.target.value;
     const typeData = event.target.name;
     if(typeData === "fullname"){
+        if(userdetails.length < 6){
+            setErrorMessage("Enter Valid full name")
+        }
         setUser({...user, userfullname : userdetails})
     }else if(typeData === "email"){
         setUser({...user, userEmail : userdetails})
@@ -89,6 +91,7 @@ export const Navbar = ()=>{
                  <div className="or">Or</div>
              </Newline>
             <Form>
+                <Err>{errorMessage}</Err>
                 <Data className="sign">
                 <label htmlFor="Full name"> Full name *</label> <br />
                 <input type="text" name="fullname" onChange={getUserData} required/>

@@ -128,7 +128,12 @@ export const Lists = styled.div`
         cursor: pointer;
     }
 `
-
+export const Err = styled.p`
+    color : red;
+    font-size: small;
+    border : none;
+    margin : 0px;
+`
 
 
 
