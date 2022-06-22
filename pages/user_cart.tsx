@@ -1,8 +1,13 @@
 import { Cart_list } from "../components/cartlist/cartlist";
 import { My_link, Last } from "../styles/user_p";
 import Link from "next/link";
+import cookie from "js-cookie"
+import { useRouter } from "next/router";
 
 const User_cart = ()=>{
+    const router = useRouter()
+    const theCookie = cookie.get("MyUser");
+
     return(
         <>
         <My_link>

@@ -7,13 +7,6 @@ import { useEffect } from "react";
 
 const Payment_page = ()=>{
     const router = useRouter()
-    let Userdetails : any;
-   useEffect(()=>{
-    if(localStorage.getItem("User")){
-    }else{
-        router.push("/")
-    }
-   })
     return(
 <>
 <My_link>

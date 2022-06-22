@@ -1,13 +1,15 @@
 import {Err, Name, List, Lists, Logo, Nav, Sign_up, Label,Backg, Message, Google_sign, Newline, Form, Data, Button } from "./nav_style"
-import React, { useState, useRef, useEffect, useTransition } from "react"
+import React, { useState, useContext } from "react"
 // import { User } from "./UserClass"
 import { Right } from "./right_nav/right"
 import { Right_nav } from "./right_nav/right_nav"
 import Link from "next/link"
 import axios from "axios"
 import cookie from "js-cookie"
+import {ShowContext } from "../../pages/_app"
 
 export const Navbar = ()=>{
+    // let closeContext = useContext(ShowContext)
 
     const [show, setShow] = useState(false)
     const [close, setClose] = useState(true)
@@ -22,7 +24,6 @@ export const Navbar = ()=>{
     let User : any ;
     if(theCookies){
         User = JSON.parse(theCookies).data;
-        console.log("the cookies success", User.full_name)
         const displayName = User.full_name.split(" ")[0]
         Value = <Name>Hi {displayName}</Name>
     }else{
@@ -55,18 +56,15 @@ export const Navbar = ()=>{
                 setErrorMessage("Enter Valid full name")
             }else if(!user.userEmail.includes("@") && !user.userEmail.includes(".")){
                 setErrorMessage("Invalid Email format");
-                console.log("email checked")
             }else{
                 setErrorMessage("")
-                console.log("credential passed")
             const res = await axios.post(URL, user)
                 const response = res.data;
            if(response.message === "used"){
                setErrorMessage("Email has been used!")
-               console.log("used ", response.message)
            }else if(response.message === "success"){
             cookie.set("MyUser", JSON.stringify(response), { expires : 1/24});
-            console.log("cookies added")
+            setClose(true)
         }else{
             if(!active){
                 setErrorMessage(response.message)
